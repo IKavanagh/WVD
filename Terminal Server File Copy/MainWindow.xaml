@@ -10,7 +10,7 @@
 			</StackPanel>
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 				<Label Content="Number of times to copy file:" />
-				<TextBox x:Name="CopyTimesTextBox" Text="100" HorizontalContentAlignment="Center" VerticalAlignment="Center" Width="50" />
+				<TextBox x:Name="CopyTimesTextBox" Text="10" HorizontalContentAlignment="Center" VerticalAlignment="Center" Width="50" />
 			</StackPanel>
 			<Button Content="Copy file" Margin="10" Padding="10" Width="150" BorderThickness="0" Click="CopyButton_OnClick" />
 			<Grid>

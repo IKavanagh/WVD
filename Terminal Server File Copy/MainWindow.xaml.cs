@@ -27,7 +27,7 @@ namespace TerminalServerFileCopy
 
 		private FileInfo SourceFileInfo { get; set; }
 
-		private const string Destination = @"\\tsclient\c\Temp\";
+		private const string Destination = @"\\tsclient\C\Temp";
 
 		private CancellationTokenSource _cts;
 		private CancellationToken _ct;
@@ -67,7 +67,7 @@ namespace TerminalServerFileCopy
 
 			if (!Int64.TryParse(CopyTimesTextBox.Text, out long times))
 			{
-				times = 100;
+				times = 10;
 				MessageBox.Show("Unable to determine number of times to copy file, defaulting to 100.",
 								"Input error", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
@@ -98,7 +98,7 @@ namespace TerminalServerFileCopy
 						_ct.ThrowIfCancellationRequested();
 
 						double milliseconds = totalElapsedMilliseconds;
-						int time = i;
+						int time = i + 1;
 						Dispatcher?.Invoke(() => TransferTime.Content = DisplayString(milliseconds / time));
 					}
 				}, _ct).ConfigureAwait(false);
